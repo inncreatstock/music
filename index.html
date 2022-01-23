@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+
+<meta charset="UTF-8">
+	<link 
+	rel="icon" 
+	type="image/vnd.microsoft.icon" 
+	href="https://inncreatblog.github.io/stock/additional-features/logotype.ico">
+		<title>.:Inncreat:.</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script src="https://kit.fontawesome.com/fba9ee772f.js" crossorigin="anonymous"></script>
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	</head>
+<body>
+
+<main>
+    <section class="content_1">
+        <div class="music">
+            <div class="music_caratula">
+                <img class="caratula" src="images/caratula.jpg">
+            </div>
+            <div class="music_dates">
+                <p class="artist_paragraph"><font class="artist">ColdPlay</font></p>
+                <p><font class="title">viva la vida or death and all his friends</font></p>
+            </div>
+            <div class="music_controls">
+                <p>
+                    <audio id="player" src="music/1.mp3" loop="-1"></audio>
+                        <button class="btn" id="btn1" onclick="document.getElementById('player').play()"><i class="fas fa-play-circle"></i></button>
+                        <button class="btn" id="btn2" onclick="document.getElementById('player').pause()"><i class="fas fa-pause-circle"></i></button>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="jjj">
+        <b class="cont">La clase empezara en: &nbsp;</b>
+<div class="cont" id="countdown"></div>
+<script>
+var end = new Date('1/16/2022 8:05 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('countdown').innerHTML = minutes + ' minutos y ';
+        document.getElementById('countdown').innerHTML += seconds + ' segundos';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script>
+    </section>
+</main>
+
+	</body>
+</html>
